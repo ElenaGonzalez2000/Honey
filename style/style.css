@@ -1,0 +1,129 @@
+* {
+    padding: 0%;
+    margin: 0%;
+}
+
+body {
+    font-family: 'Jost', sans-serif;
+
+}
+
+.fuente {
+    font-family: 'Jost', sans-serif;
+}
+
+.fuenteSecundaria {
+    font-family: 'EB Garamond', serif;
+}
+
+@media only screen and (min-width: 320px) {
+
+    /* Nav y carrito */
+
+    .tituloNav {
+        position: absolute;
+        left: 45%;
+        top: 7px;
+    }
+
+    .carrito svg {
+        position: absolute;
+        right: 11px;
+        top: 13px;
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: 0 0 0 0.1rem !important;
+    }
+
+    /* Hero */
+
+    .hero {
+        height: 15rem;
+        background-color: rgb(255, 232, 243);
+        margin-bottom: 5px;
+    }
+
+    .texto-hero {
+        padding: 0px 10px;
+        text-align: center;
+        margin-bottom: 0rem;
+    }
+
+    .titulo-hero {
+        margin-bottom: 0rem;
+    }
+
+    .boton-contacto {
+        font-size: 12px;
+        text-decoration: none;
+        color: black;
+    }
+
+    .boton-contacto:hover {
+        color: darkcyan;
+    }
+
+    /*Secciones*/
+    .secciones {
+        flex-direction: column;
+    }
+
+    .seccion {
+        text-align: center;
+        background-color: rgb(255, 232, 243);
+        margin: 15px 0px 5px 0px;
+        padding: 40px 0px 40px 0px;
+    }
+
+    .link-ver-mas {
+        text-decoration: none;
+        color: black;
+    }
+
+    .link-ver-mas:hover {
+        color: darkcyan;
+    }
+
+    /*Parte de tienda en el inicio */
+    .carruselTienda {
+        text-align: center;
+    }
+
+    .tituloTienda {
+        font-size: 20px;
+        margin-top: 15px;
+    }
+
+    .tarjetas-productos {
+        background-color: rgb(255, 232, 243);
+        height: 9rem;
+        width: 9rem;
+    }
+
+    .verMasTienda {
+        margin: 10px 0px;
+    }
+
+    /*imagenes redes*/
+    .divFotos{
+        margin: 10px 0px 20px 0px;
+    }
+    .textoFotos{
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+    .fotosRedes img{
+        width: 4rem;
+    }
+
+    /*footer*/
+    .footer{
+        background-color: rgb(255, 232, 243);
+        padding: 20px 0px;
+    }
+    .logosRedes svg{
+        fill: black;
+        padding: 0px 2px;
+    }
+}
