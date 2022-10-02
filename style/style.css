@@ -16,20 +16,25 @@ body {
     font-family: 'EB Garamond', serif;
 }
 
-@media only screen and (min-width: 320px) {
+.navbar-light .navbar-toggler{
+    border-color: rgba(255, 255, 255, 0)!important;
+}
+.navbar-toggler{
+    padding: 0.25rem 0rem!important;
+}
+
+@media only screen and (min-width: 200px) {
 
     /* Nav y carrito */
 
     .tituloNav {
-        position: absolute;
-        left: 45%;
-        top: 7px;
+        display: none;
     }
 
     .carrito svg {
         position: absolute;
         right: 11px;
-        top: 13px;
+        top: 10px;
     }
 
     .navbar-toggler:focus {
@@ -106,24 +111,166 @@ body {
     }
 
     /*imagenes redes*/
-    .divFotos{
+    .divFotos {
         margin: 10px 0px 20px 0px;
     }
-    .textoFotos{
+
+    .textoFotos {
         text-align: center;
         padding-bottom: 1rem;
     }
-    .fotosRedes img{
+    .fotosRedes{
+        flex-wrap: wrap;
+        justify-content: space-evenly!important;
+    }
+    .fotosRedes img {
+        width: 4rem;
+        padding-bottom: 1rem;
+    }
+
+    /*footer*/
+    .footer {
+        background-color: rgb(255, 232, 243);
+        padding: 20px 0px;
+    }
+
+    .logosRedes svg {
+        fill: black;
+        padding: 0px 2px;
+    }
+}
+
+@media only screen and (min-width: 320px) {
+
+    /* Nav y carrito */
+
+    .tituloNav {
+        display: block;
+        position: absolute;
+        left: 43%;
+        top: 7px;
+        margin-right: 0rem!important;
+        padding:0rem;
+    }
+
+    .carrito svg {
+        position: absolute;
+        right: 11px;
+        top: 13px;
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: 0 0 0 0.1rem !important;
+    }
+
+    /* Hero */
+
+    .hero {
+        height: 15rem;
+        background-color: rgb(255, 232, 243);
+        margin-bottom: 5px;
+    }
+
+    .texto-hero {
+        padding: 0px 10px;
+        text-align: center;
+        margin-bottom: 0rem;
+    }
+
+    .titulo-hero {
+        margin-bottom: 0rem;
+    }
+
+    .boton-contacto {
+        font-size: 12px;
+        text-decoration: none;
+        color: black;
+    }
+
+    .boton-contacto:hover {
+        color: darkcyan;
+    }
+
+    /*Secciones*/
+    .secciones {
+        flex-direction: column;
+    }
+
+    .seccion {
+        text-align: center;
+        background-color: rgb(255, 232, 243);
+        margin: 15px 0px 5px 0px;
+        padding: 40px 0px 40px 0px;
+        width: 100%;
+    }
+
+    .link-ver-mas {
+        text-decoration: none;
+        color: black;
+    }
+
+    .link-ver-mas:hover {
+        color: darkcyan;
+    }
+
+    /*Parte de tienda en el inicio */
+    .carruselTienda {
+        text-align: center;
+    }
+
+    .tituloTienda {
+        font-size: 20px;
+        margin-top: 15px;
+    }
+
+    .tarjetas-productos {
+        background-color: rgb(255, 232, 243);
+        height: 9rem;
+        width: 9rem;
+    }
+
+    .verMasTienda {
+        margin: 10px 0px;
+    }
+
+    /*imagenes redes*/
+    .divFotos {
+        margin: 10px 0px 20px 0px;
+    }
+
+    .textoFotos {
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+    .fotosRedes img {
         width: 4rem;
     }
 
     /*footer*/
-    .footer{
+    .footer {
         background-color: rgb(255, 232, 243);
         padding: 20px 0px;
     }
-    .logosRedes svg{
+
+    .logosRedes svg {
         fill: black;
         padding: 0px 2px;
+    }
+}
+
+@media only screen and (min-width: 425px){
+    .tituloNav{
+        left: 45%;
+    }
+    .secciones{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .seccion{
+        width: 48%;
+        margin-top: 10px;
+    }
+    .titulo-seccion{
+        padding: 0px 10px;
     }
 }
