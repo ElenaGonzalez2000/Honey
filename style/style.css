@@ -16,21 +16,22 @@ body {
     font-family: 'EB Garamond', serif;
 }
 
+.navIcon svg{
+    color: rgb(39, 39, 39);
+}
+.navIcon svg:hover{
+    color: blueviolet;
+}
+
 .navbar-light .navbar-toggler{
     border-color: rgba(255, 255, 255, 0)!important;
+    color: rgba(0, 0, 255, 0)!important;
 }
 .navbar-toggler{
     padding: 0.25rem 0rem!important;
 }
 
 @media only screen and (min-width: 200px) {
-
-    .navbar-light .navbar-toggler{
-        border-color: rgba(255, 255, 255, 0)!important;
-    }
-    .navbar-toggler{
-        padding: 0.25rem 0rem!important;
-    }
 
     /* Nav y carrito */
 
