@@ -16,22 +16,24 @@ body {
     font-family: 'EB Garamond', serif;
 }
 
-.navIcon svg{
+.navIcon svg {
     color: rgb(39, 39, 39);
 }
-.navIcon svg:hover{
+
+.navIcon svg:hover {
     color: blueviolet;
 }
 
-.navbar-light .navbar-toggler{
-    border-color: rgba(255, 255, 255, 0)!important;
-    color: rgba(0, 0, 255, 0)!important;
-}
-.navbar-toggler{
-    padding: 0.25rem 0rem!important;
+.navbar-light .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0) !important;
+    color: rgba(0, 0, 255, 0) !important;
 }
 
-@media only screen and (min-width: 200px) {
+.navbar-toggler {
+    padding: 0.25rem 0rem !important;
+}
+
+@media only screen and (min-width: 100px) {
 
     /* Nav y carrito */
 
@@ -53,8 +55,8 @@ body {
 
     .hero {
         height: 15rem;
-        background-color: rgb(255, 232, 243);
         margin-bottom: 5px;
+        background-color: rgb(255, 232, 243);
     }
 
     .texto-hero {
@@ -82,9 +84,25 @@ body {
         flex-direction: column;
     }
 
+    .seccion-temporadaDeVerano {
+        background-image: url(../images/temporadaVerano.jpg);
+        background-size: cover;
+        background-position: center;
+        overflow: auto;
+    }
+
+    .seccion-descuentos {
+        background-image: url(../images/descuentos.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
     .seccion {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         text-align: center;
-        background-color: rgb(255, 232, 243);
+        background-color: rgb(255, 199, 239);
         margin: 15px 0px 5px 0px;
         padding: 40px 0px 40px 0px;
     }
@@ -127,10 +145,12 @@ body {
         text-align: center;
         padding-bottom: 1rem;
     }
-    .fotosRedes{
+
+    .fotosRedes {
         flex-wrap: wrap;
-        justify-content: space-evenly!important;
+        justify-content: space-evenly !important;
     }
+
     .fotosRedes img {
         width: 4rem;
         padding-bottom: 1rem;
@@ -141,7 +161,9 @@ body {
         background-color: rgb(255, 232, 243);
         padding: 20px 0px;
     }
-
+    .footerContenedor{
+        flex-direction: column;
+    }
     .logosRedes svg {
         fill: black;
         padding: 0px 2px;
@@ -157,8 +179,8 @@ body {
         position: absolute;
         left: 43%;
         top: 7px;
-        margin-right: 0rem!important;
-        padding:0rem;
+        margin-right: 0rem !important;
+        padding: 0rem;
     }
 
     .carrito svg {
@@ -250,6 +272,7 @@ body {
         text-align: center;
         padding-bottom: 1rem;
     }
+
     .fotosRedes img {
         width: 4rem;
     }
@@ -266,19 +289,55 @@ body {
     }
 }
 
-@media only screen and (min-width: 425px){
-    .tituloNav{
+@media only screen and (min-width: 425px) {
+    .tituloNav {
         left: 45%;
     }
-    .secciones{
+
+    .secciones {
         flex-direction: row;
         justify-content: space-between;
     }
-    .seccion{
+
+    .seccion {
         width: 48%;
         margin-top: 10px;
     }
-    .titulo-seccion{
+
+    .titulo-seccion {
         padding: 0px 10px;
+    }
+
+    .footerContenedor{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .tituloNav{
+        left: 46%;
+    }
+
+    .seccion{
+        width: 49.5%;
+        height: 12rem;
+    }
+
+    .fotosRedes img{
+        width: 8rem;
+    }
+}
+
+@media only screen and (min-width: 1024px){
+    .navbar-collapse{
+        justify-content: center;
+    }
+    .navbar-nav .nav-link{
+        padding-left: 1.5rem!important;
+        padding-right: 1.5rem!important;
+    }
+    .tituloNav{
+        left: 1rem;
     }
 }
