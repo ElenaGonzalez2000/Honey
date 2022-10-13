@@ -117,7 +117,7 @@ body {
         color: darkcyan;
     }
 
-    /*Parte de tienda en el inicio */
+    /*contenedor de cards de tienda en el inicio */
     .carruselTienda {
         text-align: center;
     }
@@ -136,12 +136,57 @@ body {
     .verMasTienda {
         margin: 10px 0px;
     }
+    
 
 
+    /* main de tienda */
+    .tiendah1{
+        text-align: center;
+        margin: 1rem;
+        border-bottom-color: rgba(66, 66, 66, 0.5);
+        border-bottom-style: solid;
+        border-bottom-width: thin;
+        padding-bottom: 1rem;
+    }
+
+
+
+    /*filtro y ordenar por*/
+
+    .filtrosYOrdenar{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0rem 0.8rem 0.5rem 0.8rem;
+        justify-content: space-between;
+    }
+    .tituloOrdenar{
+        width: 100%;
+        font-size: 12px;
+        padding-left: 0.2rem;
+    }
+    .cajasFiltros{
+        width: 47%;
+        height: 1.5rem;
+        padding-left: 0.6rem;
+        border-style: solid;
+        border-radius: 3px;
+        border-width: 1px;
+        border-color: rgba(0, 0, 0, 0.267);
+    }
+
+
+
+    .contendorTienda{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    /*cards*/
 
     .card {
         display: flex;
-        width: 12rem;
+        width: 8rem;
         border: 0px solid rgba(0, 0, 0, 0) !important;
     }
 
@@ -152,6 +197,7 @@ body {
     .card-info {
         display: flex;
         justify-content: space-between;
+        padding: 5px 10px;
     }
 
     .card-name-precio {
@@ -160,13 +206,21 @@ body {
         flex-direction: column;
         align-items: flex-start;
     }
+    .card-name-precio h3{
+        font-weight: 400;
+        font-size: 17px;
+    }
+    .card-name-precio h4{
+        font-weight: 500;
+        font-size: 15px;
+    }
 
-    .card-add{
+    .card-button{
         display: flex;
         cursor: pointer;
         align-items: center;
     }
-    .card-add a{
+    .card-button a{
         color: black;
     }
 
@@ -328,6 +382,18 @@ body {
     .logosRedes svg {
         fill: black;
         padding: 0px 2px;
+    }
+}
+
+@media only screen and (min-width: 375px){
+    .filtrosYOrdenar{
+        padding: 0rem 0.5rem 0.5rem 0.5rem;
+    }
+    .cajasFiltros{
+        width: 48%;
+    }
+    .card{
+        width: 10rem;
     }
 }
 
