@@ -42,14 +42,53 @@ body {
         display: none;
     }
 
-    .carrito svg {
+    .navbar-toggler:focus {
+        box-shadow: 0 0 0 0.1rem !important;
+    }
+
+    /*carrito*/
+
+    .cart svg {
         position: absolute;
         right: 11px;
         top: 10px;
     }
 
-    .navbar-toggler:focus {
-        box-shadow: 0 0 0 0.1rem !important;
+    .cart-card{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .cart-info-box{
+        display: flex;
+    }
+    .cart-info-box img{
+        width: 4rem;
+        height: 5rem;
+        margin-right: 0.5rem;
+    }
+    .cart-buttons button{
+        border: none;
+        padding: 0.2rem 0.6rem;
+        border-radius: 50px;
+    }
+    .cart-button-delate{
+        background-color: rgb(245, 67, 67);
+        color: white;
+    }
+    .cart-button-more{
+        background-color: rgb(243, 243, 243);
+        color: rgb(0, 0, 0);
+    }
+    .cart-button-clean{
+        margin: 1rem 0rem;
+    }
+    .cart-button-clean button{
+        border: none;
+        border-radius: 1rem;
+        padding: 0.1rem 0.5rem;
+        color: white;
+        background-color: rgb(23, 164, 245);
     }
 
     /* Hero */
@@ -136,11 +175,11 @@ body {
     .verMasTienda {
         margin: 10px 0px;
     }
-    
+
 
 
     /* main de tienda */
-    .tiendah1{
+    .tiendah1 {
         text-align: center;
         margin: 1rem;
         border-bottom-color: rgba(66, 66, 66, 0.5);
@@ -153,18 +192,20 @@ body {
 
     /*filtro y ordenar por*/
 
-    .filtrosYOrdenar{
+    .filtrosYOrdenar {
         display: flex;
         flex-wrap: wrap;
         padding: 0rem 0.8rem 0.5rem 0.8rem;
         justify-content: space-between;
     }
-    .tituloOrdenar{
+
+    .tituloOrdenar {
         width: 100%;
         font-size: 12px;
         padding-left: 0.2rem;
     }
-    .cajasFiltros{
+
+    .cajasFiltros {
         width: 47%;
         height: 1.5rem;
         padding-left: 0.6rem;
@@ -176,7 +217,7 @@ body {
 
 
 
-    .contendorTienda{
+    .contendorTienda {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
@@ -206,21 +247,24 @@ body {
         flex-direction: column;
         align-items: flex-start;
     }
-    .card-name-precio h3{
+
+    .card-name-precio h3 {
         font-weight: 400;
         font-size: 17px;
     }
-    .card-name-precio h4{
+
+    .card-name-precio h4 {
         font-weight: 500;
         font-size: 15px;
     }
 
-    .card-button{
+    .card-button {
         display: flex;
         cursor: pointer;
         align-items: center;
     }
-    .card-button a{
+
+    .card-button a {
         color: black;
     }
 
@@ -276,7 +320,7 @@ body {
         padding: 0rem;
     }
 
-    .carrito svg {
+    .cart svg {
         position: absolute;
         right: 11px;
         top: 13px;
@@ -385,14 +429,16 @@ body {
     }
 }
 
-@media only screen and (min-width: 375px){
-    .filtrosYOrdenar{
+@media only screen and (min-width: 375px) {
+    .filtrosYOrdenar {
         padding: 0rem 0.5rem 0.5rem 0.5rem;
     }
-    .cajasFiltros{
+
+    .cajasFiltros {
         width: 48%;
     }
-    .card{
+
+    .card {
         width: 10rem;
     }
 }
