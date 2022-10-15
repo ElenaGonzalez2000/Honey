@@ -221,7 +221,7 @@ body {
 
 
 
-    .contendorTienda {
+    .contendor-tienda {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;

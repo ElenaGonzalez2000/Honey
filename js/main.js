@@ -60,60 +60,70 @@ const abrigos = productos.filter((producto) => producto.tipo == 'abrigo');
 
 
 
-let contenedor = document.getElementById('contenedorTienda');
+let contenedorTienda = document.getElementById('contenedor-tienda'); //llamo al contenedor de la tienda
+const contenedorCarrito = document.getElementById('cart-body')
 let cart = []
 
-
-function addProdToCart(event) {
-    cart.push(event.target.getAttribute('card-button'))
-    renderCart()
-}
-
-const renderProductos = (products, target) => {
-    let acumulador = '';
-    products.map(product => {
-        acumulador += `
-        <div class="card" id="card">
-            <div class="card-img">
-                <img src="${product.imgUrl}"" srcset="" alt="${product.nombre}">
-            </div>
-            <div class="card-info">
-                <div class="card-name-precio">
-                    <h3 class="fuente">${product.nombre}</h3>
-                    <h4 class="fuente">$${product.precio}</h4>
-                </div>
-                <button ref=${product.id} class="card-button"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"class="bi bi-plus-circle add-card" viewBox="0 0 16 16">
+//cards de productos en la pagina tienda
+productos.forEach((product) => {
+    const div = document.createElement('div')
+    div.classList.add('card')
+    div.innerHTML = `
+    <div class="card-img">
+        <img src="${product.imgUrl}"" srcset="" alt="${product.nombre}">
+    </div>
+    <div class="card-info">
+        <div class="card-name-precio">
+        <h3 class="fuente">${product.nombre}</h3>
+        <h4 class="fuente">$${product.precio}</h4>
+        </div>
+        <button ref='' id="agregar${product.id}" class="card-button"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"class="bi bi-plus-circle add-card" viewBox="0 0 16 16">
                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5  0    0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/></svg>
-                </button>
-            </div>
-        </div>`
-    target.innerHTML = acumulador;
+        </button>
+    </div>
+        `
+    contenedorTienda.appendChild(div)
+    const boton = document.getElementById(`agregar${product.id}`);
+    boton.addEventListener('click', () =>{
+        agregarCarrito(product.id)
     })
-    
-    let cardButton = document.getElementsByClassName('card-button');
-    cardButton.addEventListener('click', addProdToCart);
+})
+
+// agregar al carrito
+const agregarCarrito = (prodId) => {
+    const item = productos.find((prod) => prod.id === prodId)
+    cart.push(item)
+    actualizarCarrito()
+    console.log(cart)
 }
-renderProductos(productos, contenedor);
 
-// carito   
-
-
-
-
-
+// eliminar del carrito 
+const eliminarDelCarrito = (prodId) => {
+    const item = productos.find((prod) => prod.id === prodId)
+    cart.splice(indice, 1)
+}
 
 
 
-
-
-
-
-
-/*
-<div class="card-button" id="mark" >
-                <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"class="bi bi-plus-circle add-card" viewBox="0 0 16 16">
-                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                </svg></a>
-            </div>*/
+// actualizar carrito
+const actualizarCarrito = () =>{
+    contenedorCarrito.innerHTML = ''
+    cart.forEach((product) => {
+        const div = document.createElement('div')
+        div.classList.add('cart-card')
+        div.innerHTML = `
+        <div class="cart-info-box">
+            <img src="${product.imgUrl}"  alt="" srcset="">
+            <div class="cart-info-product">
+                <h5>${product.nombre}</h5>
+                <h5>$${product.precio}</h5>
+            </div>
+        </div>
+        <div class="cart-buttons">
+            <button onclick="eliminarDelCarrito(product.id)" class="cart-button-delate">eliminar</button>
+        </div>
+        `
+        contenedorCarrito.appendChild(div)
+    })
+}
