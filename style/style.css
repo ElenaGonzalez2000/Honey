@@ -67,7 +67,11 @@ body {
         height: 5rem;
         margin-right: 0.5rem;
     }
+    .card-button{
+        display: flex;
+    }
     .cart-buttons button{
+        margin-left: 0.5rem;
         border: none;
         padding: 0.2rem 0.6rem;
         border-radius: 50px;
@@ -264,8 +268,10 @@ body {
         align-items: center;
     }
 
-    .card-button a {
+    .card-button{
         color: black;
+        border: none;
+        background-color: transparent;
     }
 
 
