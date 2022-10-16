@@ -13,7 +13,7 @@ const img12 = '../images/productos/abrigo (2).webp'
 
 //funcion para crear los productos
 class Producto {
-    constructor(id, nombre, precio, stock, tipo, temporada, img) {
+    constructor(id, nombre, precio, stock, tipo, temporada, img, cantidad) {
         this.id = id
         this.nombre = nombre;
         this.precio = precio;
@@ -21,22 +21,23 @@ class Producto {
         this.tipo = tipo;
         this.temporada = temporada;
         this.imgUrl = img
+        this.cantidad = cantidad
     }
 }
 
 //declaracion de productos
-let productoA = new Producto(1, 'Top Adelle', 999, 50, 'top', 'primavera', img1);
-let productoB = new Producto(2, 'Top Jazmin', 890, 45, 'top', 'primavera', img2);
-let productoC = new Producto(3, 'Top Ameli', 990, 48, 'top', 'primavera', img3);
-let productoD = new Producto(4, 'Remera Dino', 1200, 25, 'remera', 'primavera', img4);
-let productoE = new Producto(5, 'Remera Ruth', 1150, 30, 'remera', 'primavera', img5);
-let productoF = new Producto(6, 'Remera Mar', 1100, 4, 'remera', 'invierno', img6);
-let productoG = new Producto(7, 'Short Nute', 3100, 30, 'short', 'primavera', img7);
-let productoH = new Producto(8, 'Jean Luna', 3500, 25, 'jean', 'primavera', img8);
-let productoI = new Producto(9, 'Jean Lola', 2900, 0, 'jean', 'invierno', img9)
-let productoJ = new Producto(10, 'Buzo Lila', 1800, 5, 'abrigo', 'invierno', img10);
-let productoK = new Producto(11, 'Campera Puffer', 6500, 0, 'abrigo', 'invierno', img11);
-let productoL = new Producto(12, 'Chaleco Puffer', 6200, 3, 'abrigo', 'invierno', img12);
+let productoA = new Producto(1, 'Top Adelle', 999, 50, 'top', 'primavera', img1, 1);
+let productoB = new Producto(2, 'Top Jazmin', 890, 45, 'top', 'primavera', img2, 1);
+let productoC = new Producto(3, 'Top Ameli', 990, 48, 'top', 'primavera', img3, 1);
+let productoD = new Producto(4, 'Remera Dino', 1200, 25, 'remera', 'primavera', img4, 1);
+let productoE = new Producto(5, 'Remera Ruth', 1150, 30, 'remera', 'primavera', img5, 1);
+let productoF = new Producto(6, 'Remera Mar', 1100, 4, 'remera', 'invierno', img6, 1);
+let productoG = new Producto(7, 'Short Nute', 3100, 30, 'short', 'primavera', img7, 1);
+let productoH = new Producto(8, 'Jean Luna', 3500, 25, 'jean', 'primavera', img8, 1);
+let productoI = new Producto(9, 'Jean Lola', 2900, 2, 'jean', 'invierno', img9, 1)
+let productoJ = new Producto(10, 'Buzo Lila', 1800, 5, 'abrigo', 'invierno', img10, 1);
+let productoK = new Producto(11, 'Campera Puffer', 6500, 5, 'abrigo', 'invierno', img11, 1);
+let productoL = new Producto(12, 'Chaleco Puffer', 6200, 3, 'abrigo', 'invierno', img12, 1);
 
 
 //variable que guarda los productos
@@ -60,9 +61,25 @@ const abrigos = productos.filter((producto) => producto.tipo == 'abrigo');
 
 
 
-let contenedorTienda = document.getElementById('contenedor-tienda'); //llamo al contenedor de la tienda
-const contenedorCarrito = document.getElementById('cart-body')
+const contenedorTienda = document.getElementById('contenedor-tienda'); //llamo al contenedor de la tienda
+const contenedorCarrito = document.getElementById('cart-body')//body del carrito
+const vaciarCarrito = document.getElementById('vaciarCart')//boton vaciar carrito 
+const contadorCarrito = document.getElementById('contadorCarrito')//contador del carrito
+const totalCarrito = document.getElementById('precioTotal')//calcular el total
+
 let cart = []
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('cart')) {
+        cart = JSON.parse(localStorage.getItem('cart'))
+        actualizarCarrito()
+    }
+})
+
+vaciarCarrito.addEventListener('click', () => {
+    cart.length = 0
+    actualizarCarrito()
+})
 
 //cards de productos en la pagina tienda
 productos.forEach((product) => {
@@ -85,29 +102,42 @@ productos.forEach((product) => {
         `
     contenedorTienda.appendChild(div)
     const boton = document.getElementById(`agregar${product.id}`);
-    boton.addEventListener('click', () =>{
+    boton.addEventListener('click', () => {
         agregarCarrito(product.id)
     })
 })
 
 // agregar al carrito
 const agregarCarrito = (prodId) => {
-    const item = productos.find((prod) => prod.id === prodId)
-    cart.push(item)
+    //cantidad del mismo elemento en el carrito
+    const existe = cart.some(product => product.id === prodId)
+    if (existe) {
+        const product = cart.map(product => {
+            if (product.id === prodId) {
+                product.cantidad++
+            }
+        })
+    } else {
+        const item = productos.find((prod) => prod.id === prodId)
+        cart.push(item)
+        console.log(cart)
+    }
     actualizarCarrito()
-    console.log(cart)
 }
 
-// eliminar del carrito 
+
+// eliminar producto del carrito 
 const eliminarDelCarrito = (prodId) => {
     const item = productos.find((prod) => prod.id === prodId)
+    const indice = cart.indexOf(item)
     cart.splice(indice, 1)
+    actualizarCarrito()
 }
 
 
 
 // actualizar carrito
-const actualizarCarrito = () =>{
+const actualizarCarrito = () => {
     contenedorCarrito.innerHTML = ''
     cart.forEach((product) => {
         const div = document.createElement('div')
@@ -117,13 +147,17 @@ const actualizarCarrito = () =>{
             <img src="${product.imgUrl}"  alt="" srcset="">
             <div class="cart-info-product">
                 <h5>${product.nombre}</h5>
-                <h5>$${product.precio}</h5>
+                <h6>$${product.precio}</h6>
+                <p class="cantidadCart">✖ <span id="cantidad">${product.cantidad}</span></p>
             </div>
         </div>
         <div class="cart-buttons">
-            <button onclick="eliminarDelCarrito(product.id)" class="cart-button-delate">eliminar</button>
+            <button onclick="eliminarDelCarrito(${product.id})" class="cart-button-delate">eliminar</button>
         </div>
         `
         contenedorCarrito.appendChild(div)
+        localStorage.setItem('cart', JSON.stringify(cart))
     })
+    contadorCarrito.innerText = cart.length
+    totalCarrito.innerText = cart.reduce((acc, prod) => acc + prod.precio*prod.cantidad, 0)
 }

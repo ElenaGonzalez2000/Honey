@@ -42,16 +42,41 @@ body {
         display: none;
     }
 
+    .navbar{
+        flex-wrap: nowrap!important;
+    }
+
     .navbar-toggler:focus {
         box-shadow: 0 0 0 0.1rem !important;
     }
 
     /*carrito*/
+    #offcanvasRightLabel{
+        margin: 0rem;
+    }
+    #cart-body{
+        flex-grow: 0;
+    }
+    .totalCart{
+        padding: 1rem;
+        margin-bottom: 0rem;
+    }
+
+    .cantidadCart{
+        margin-bottom: 0.5rem;
+    }
+
+    #vaciarCart{
+        padding: 0.2rem 0.5rem;
+        margin: 0rem 1rem;
+    }
+
+    .cart{
+        display: flex;
+    }
 
     .cart svg {
-        position: absolute;
-        right: 11px;
-        top: 10px;
+        display: flex;
     }
 
     .cart-card{
@@ -84,15 +109,11 @@ body {
         background-color: rgb(243, 243, 243);
         color: rgb(0, 0, 0);
     }
-    .cart-button-clean{
-        margin: 1rem 0rem;
-    }
     .cart-button-clean button{
         border: none;
         border-radius: 1rem;
-        padding: 0.1rem 0.5rem;
         color: white;
-        background-color: rgb(23, 164, 245);
+        background-color: rgb(57, 182, 255);
     }
 
     /* Hero */
@@ -324,12 +345,6 @@ body {
         top: 7px;
         margin-right: 0rem !important;
         padding: 0rem;
-    }
-
-    .cart svg {
-        position: absolute;
-        right: 11px;
-        top: 13px;
     }
 
     .navbar-toggler:focus {
