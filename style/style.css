@@ -21,7 +21,7 @@ body {
 }
 
 .navIcon svg:hover {
-    color: blueviolet;
+    color: rgb(255, 199, 239);
 }
 
 .navbar-light .navbar-toggler {
@@ -99,6 +99,14 @@ body {
     }
     .card-button{
         display: flex;
+        cursor: pointer;
+        align-items: center;
+        color: black;
+        border: none;
+        background-color: transparent;
+    }
+    .card-button:hover{
+        color: rgb(255, 176, 231);
     }
     .cart-buttons button{
         margin-left: 0.5rem;
@@ -289,15 +297,9 @@ body {
     }
 
     .card-button {
-        display: flex;
-        cursor: pointer;
-        align-items: center;
     }
 
     .card-button{
-        color: black;
-        border: none;
-        background-color: transparent;
     }
 
 
@@ -521,5 +523,23 @@ body {
 
     .tituloNav {
         left: 1rem;
+    }
+}
+
+@media only screen and (min-width: 1044px) {
+    .card{
+        width: 11rem;
+    }
+}
+
+@media only screen and (min-width: 1256px) {
+    .card{
+        width: 13rem;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .card{
+        width: 14rem;
     }
 }
