@@ -139,6 +139,7 @@ const eliminarDelCarrito = (prodId) => {
 // actualizar carrito
 const actualizarCarrito = () => {
     contenedorCarrito.innerHTML = ''
+    localStorage.setItem('cart', JSON.stringify(cart))
     cart.forEach((product) => {
         const div = document.createElement('div')
         div.classList.add('cart-card')
@@ -156,7 +157,6 @@ const actualizarCarrito = () => {
         </div>
         `
         contenedorCarrito.appendChild(div)
-        localStorage.setItem('cart', JSON.stringify(cart))
     })
     contadorCarrito.innerText = cart.length
     totalCarrito.innerText = cart.reduce((acc, prod) => acc + prod.precio*prod.cantidad, 0)
