@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
 vaciarCarrito.addEventListener('click', () => {
     cart.length = 0
     Toastify({
+        className: "toastify",
         text: 'Vaciaste el carrito',
         duration: 1000,
         close: false,
@@ -135,6 +136,7 @@ const agregarCarrito = (prodId) => {
         console.log(cart)
     }
     Toastify({
+        className: "toastify",
         text: 'Agregaste un producto al carrito',
         duration: 1000,
         newWindow: true,
@@ -158,6 +160,7 @@ const eliminarDelCarrito = (prodId) => {
     cart.splice(indice, 1)
     actualizarCarrito()
     Toastify({
+        className: "toastify",
         text: 'Eliminaste un producto',
         duration: 1000,
         newWindow: true,

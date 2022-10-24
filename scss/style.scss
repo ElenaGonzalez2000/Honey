@@ -24,6 +24,10 @@
 .navbar-toggler:focus {
     box-shadow: 0 0 0 0.1rem !important;
 }
+.toastify{
+    font-family: 'Jost', sans-serif;
+}
+
 @media only screen and (min-width: 100px) {
     /* Header y Nav */
     .header {
@@ -258,6 +262,7 @@
 
             div {
                 flex-grow: 0;
+                margin-bottom: 1rem;
 
                 .cart-card {
                     display: flex;
@@ -312,7 +317,6 @@
         }
     }
 }
-
 
 @media only screen and (min-width: 320px) {
     /* Nav */
