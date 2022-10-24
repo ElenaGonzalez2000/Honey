@@ -81,7 +81,6 @@ vaciarCarrito.addEventListener('click', () => {
     Toastify({
         text: 'Vaciaste el carrito',
         duration: 1000,
-        newWindow: true,
         close: false,
         gravity: "top", // `top` or `bottom`
         position: "left", // `left`, `center` or `right`
@@ -136,7 +135,7 @@ const agregarCarrito = (prodId) => {
         console.log(cart)
     }
     Toastify({
-        text: 'Agregaste el producto al carrito',
+        text: 'Agregaste un producto al carrito',
         duration: 1000,
         newWindow: true,
         close: false,
@@ -159,7 +158,7 @@ const eliminarDelCarrito = (prodId) => {
     cart.splice(indice, 1)
     actualizarCarrito()
     Toastify({
-        text: 'Eliminaste el producto',
+        text: 'Eliminaste un producto',
         duration: 1000,
         newWindow: true,
         close: false,

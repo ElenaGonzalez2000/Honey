@@ -12,7 +12,7 @@
   color: #272727; }
 
 .navIcon svg:hover {
-  color: #ffc7ef; }
+  color: #ffb0e7; }
 
 .navbar-light .navbar-toggler {
   border-color: rgba(255, 255, 255, 0) !important;
@@ -58,7 +58,7 @@
       flex-direction: column;
       justify-content: center;
       text-align: center;
-      background-color: #ffc7ef;
+      background-color: #ffe8f3;
       margin: 15px 0px 5px 0px;
       padding: 40px 0px 40px 0px; }
     .secciones .seccion-temporadaDeVerano {
@@ -101,7 +101,7 @@
         padding-bottom: 1rem; }
   /*footer*/
   .footer {
-    background-color: #ffe8f3;
+    background-color: #ffb0e7;
     padding: 20px 0px; }
     .footer .footerContenedor {
       flex-direction: column; }
