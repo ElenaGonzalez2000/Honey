@@ -322,7 +322,8 @@
                 .tituloNav {
                         display: block;
                         position: absolute;
-                        left: 43%;
+                        left: 42%;
+                        top: 0.8rem;
                         margin-right: 0rem !important;
                         padding: 0rem;
                     }
@@ -332,6 +333,16 @@
 }
 
 @media only screen and (min-width: 375px) {
+        /* Nav */
+        .header {
+            nav {
+                div {
+                    .tituloNav {
+                            left: 43%;
+                        }
+                    }
+                }
+            }
     //filtros de tienda
     .filtrosYOrdenar {
         padding: 0rem 0.5rem 0.5rem 0.5rem;
@@ -386,7 +397,7 @@
         nav {
             div {
                 .tituloNav {
-                    left: 46%;
+                    left: 47%;
                 }
             }
         }
@@ -412,7 +423,7 @@
     }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 992px) {
     .navbar-collapse {
         justify-content: center;
     }
@@ -433,8 +444,23 @@
     }
 }
 
+@media only screen and (min-width: 1024px){
+    //secciones
+    .secciones{
+        .seccion{
+            height: 15rem;
+        }
+    }
+}
+
 @media only screen and (min-width: 1044px) {
-    
+    //secciones
+    .secciones{
+        .seccion{
+            height: 18rem;
+        }
+    }
+    //tienda
     .contendor-tienda{
         .card {
             width: 13rem;
@@ -442,7 +468,19 @@
     }
 }
 
+@media only screen and (min-width: 1300px){
+    .secciones{
+        .seccion{
+            height: 20rem;
+        }
+    }
+}
+
 @media only screen and (min-width: 1440px) {
+    //hero
+    .hero{
+        height: 20rem;
+    }
     .contendor-tienda{
         .card {
             width: 14rem;
