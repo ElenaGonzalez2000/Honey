@@ -85,7 +85,7 @@ vaciarCarrito.addEventListener('click', () => {
         close: false,
         gravity: "top", // `top` or `bottom`
         position: "left", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
+        stopOnFocus: false, // Prevents dismissing of toast on hover
         style: {
             background: "rgb(255, 176, 231)",
         },
@@ -139,11 +139,10 @@ const agregarCarrito = (prodId) => {
         className: "toastify",
         text: 'Agregaste un producto al carrito',
         duration: 1000,
-        newWindow: true,
         close: false,
         gravity: "top", // `top` or `bottom`
         position: "left", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
+        stopOnFocus: false, // Prevents dismissing of toast on hover
         style: {
             background: "rgb(255, 176, 231)",
         },
@@ -163,11 +162,10 @@ const eliminarDelCarrito = (prodId) => {
         className: "toastify",
         text: 'Eliminaste un producto',
         duration: 1000,
-        newWindow: true,
         close: false,
         gravity: "top", // `top` or `bottom`
         position: "left", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
+        stopOnFocus: false, // Prevents dismissing of toast on hover
         style: {
             background: "rgb(255, 176, 231)",
         },

@@ -215,7 +215,16 @@
       background-color: #39b6ff; }
     .cart div #vaciarCart {
       padding: 0.2rem 0.5rem;
-      margin: 0rem 1rem; } }
+      margin: 0rem 1rem; }
+  .notFound {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    right: 0px; }
+    .notFound h2 {
+      color: #ff43c7;
+      font-weight: 600; } }
 
 @media only screen and (min-width: 320px) {
   /* Nav */
