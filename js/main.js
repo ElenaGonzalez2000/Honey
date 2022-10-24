@@ -78,6 +78,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 vaciarCarrito.addEventListener('click', () => {
     cart.length = 0
+    Toastify({
+        text: 'Vaciaste el carrito',
+        duration: 1000,
+        newWindow: true,
+        close: false,
+        gravity: "top", // `top` or `bottom`
+        position: "left", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "rgb(255, 176, 231)",
+        },
+        onClick: function () { } // Callback after click
+    }).showToast();
     actualizarCarrito()
 })
 
@@ -122,6 +135,19 @@ const agregarCarrito = (prodId) => {
         cart.push(item)
         console.log(cart)
     }
+    Toastify({
+        text: 'Agregaste el producto al carrito',
+        duration: 1000,
+        newWindow: true,
+        close: false,
+        gravity: "top", // `top` or `bottom`
+        position: "left", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "rgb(255, 176, 231)",
+        },
+        onClick: function () { } // Callback after click
+    }).showToast();
     actualizarCarrito()
 }
 
@@ -132,6 +158,19 @@ const eliminarDelCarrito = (prodId) => {
     const indice = cart.indexOf(item)
     cart.splice(indice, 1)
     actualizarCarrito()
+    Toastify({
+        text: 'Eliminaste el producto',
+        duration: 1000,
+        newWindow: true,
+        close: false,
+        gravity: "top", // `top` or `bottom`
+        position: "left", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "rgb(255, 176, 231)",
+        },
+        onClick: function () { } // Callback after click
+    }).showToast();
 }
 
 
@@ -159,5 +198,5 @@ const actualizarCarrito = () => {
         contenedorCarrito.appendChild(div)
     })
     contadorCarrito.innerText = cart.length
-    totalCarrito.innerText = cart.reduce((acc, prod) => acc + prod.precio*prod.cantidad, 0)
+    totalCarrito.innerText = cart.reduce((acc, prod) => acc + prod.precio * prod.cantidad, 0)
 }
