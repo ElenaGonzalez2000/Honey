@@ -37,28 +37,11 @@ let productoH = new Producto(8, 'Jean Luna', 3500, 25, 'jean', 'primavera', img8
 let productoI = new Producto(9, 'Jean Lola', 2900, 2, 'jean', 'invierno', img9, 1)
 let productoJ = new Producto(10, 'Buzo Lila', 1800, 5, 'abrigo', 'invierno', img10, 1);
 let productoK = new Producto(11, 'Campera Puffer', 6500, 5, 'abrigo', 'invierno', img11, 1);
-let productoL = new Producto(12, 'Chaleco Puffer', 6200, 0, 'abrigo', 'invierno', img12, 1);
+let productoL = new Producto(12, 'Chaleco Puffer', 6200, 2, 'abrigo', 'invierno', img12, 1);
 
 
 //variable que guarda los productos
 const productos = [productoA, productoB, productoC, productoD, productoE, productoF, productoG, productoH, productoI, productoJ, productoK, productoL];
-
-
-//filtro para saber los productos con stock:
-const conStock = productos.filter((producto) => producto.stock > 0);
-//filtro temporada de primavera:
-const temporadaPrimavera = productos.filter((producto) => producto.temporada == 'primavera');
-//filtro temporada invierno:
-const temporadaInvierno = productos.filter((producto) => producto.temporada == 'invierno');
-//filtros para dividir los productos entre precios:
-const entre0y3mil = productos.filter((producto) => producto.precio > 0 && producto.precio <= 3000);
-const entre3mily5mil = productos.filter((producto) => producto.precio >= 3000 && producto.precio <= 5000);
-const entre5mily10mil = productos.filter((producto) => producto.precio >= 5000 && producto.precio <= 10000);
-//filtros por tipo de ropa:
-const topsYRemeras = productos.filter((producto) => producto.tipo == 'top' || producto.tipo == 'remera');
-const jeansYShorts = productos.filter((producto) => producto.tipo == 'jean' || producto.tipo == 'short');
-const abrigos = productos.filter((producto) => producto.tipo == 'abrigo');
-
 
 
 const contenedorTienda = document.getElementById('contenedor-tienda'); //llamo al contenedor de la tienda
