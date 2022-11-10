@@ -37,7 +37,7 @@ let productoH = new Producto(8, 'Jean Luna', 3500, 25, 'jean', 'primavera', img8
 let productoI = new Producto(9, 'Jean Lola', 2900, 2, 'jean', 'invierno', img9, 1)
 let productoJ = new Producto(10, 'Buzo Lila', 1800, 5, 'abrigo', 'invierno', img10, 1);
 let productoK = new Producto(11, 'Campera Puffer', 6500, 5, 'abrigo', 'invierno', img11, 1);
-let productoL = new Producto(12, 'Chaleco Puffer', 6200, 3, 'abrigo', 'invierno', img12, 1);
+let productoL = new Producto(12, 'Chaleco Puffer', 6200, 0, 'abrigo', 'invierno', img12, 1);
 
 
 //variable que guarda los productos

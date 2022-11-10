@@ -296,14 +296,16 @@
   .secciones .seccion {
     height: 18rem; }
   .contendor-tienda .card {
-    width: 13rem; } }
+    width: 11rem; } }
 
 @media only screen and (min-width: 1300px) {
   .secciones .seccion {
-    height: 20rem; } }
-
-@media only screen and (min-width: 1440px) {
+    height: 20rem; }
   .hero {
     height: 20rem; }
+  .contendor-tienda .card {
+    width: 13rem; } }
+
+@media only screen and (min-width: 1440px) {
   .contendor-tienda .card {
     width: 14rem; } }

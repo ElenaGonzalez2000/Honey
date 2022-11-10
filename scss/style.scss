@@ -505,7 +505,6 @@
 }
 
 @media only screen and (min-width: 1024px) {
-
     //secciones
     .secciones {
         .seccion {
@@ -526,7 +525,7 @@
     //tienda
     .contendor-tienda {
         .card {
-            width: 13rem;
+            width: 11rem;
         }
     }
 }
@@ -537,14 +536,19 @@
             height: 20rem;
         }
     }
+    //hero
+    .hero{
+        height: 20rem;
+    }
+        //tienda
+        .contendor-tienda {
+            .card {
+                width: 13rem;
+            }
+        }
 }
 
 @media only screen and (min-width: 1440px) {
-
-    //hero
-    .hero {
-        height: 20rem;
-    }
 
     .contendor-tienda {
         .card {
